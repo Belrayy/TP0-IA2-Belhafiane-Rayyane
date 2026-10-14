@@ -166,26 +166,20 @@ public class Bb implements Serializable {
             // Génère les rôles de l'API prédéfinis
             this.listeRolesSysteme = new ArrayList<>();
             // Vous pouvez évidemment écrire ces rôles dans la langue que vous voulez.
-            String role = """
-                    You are a helpful assistant. You help the user to find the information they need.
-                    If the user type a question, you answer it.
-                    """;
+            String role = "You are a helpful assistant. You help the user to find the information they need.\n" +
+                          "If the user type a question, you answer it.\n";
             // 1er argument : la valeur du rôle, 2ème argument : le libellé du rôle
             this.listeRolesSysteme.add(new SelectItem(role, "Assistant"));
 
-            role = """
-                    You are an interpreter. You translate from English to French and from French to English.
-                    If the user type a French text, you translate it into English.
-                    If the user type an English text, you translate it into French.
-                    If the text contains only one to three words, give some examples of usage of these words in English.
-                    """;
+            role = "You are an interpreter. You translate from English to French and from French to English.\n" +
+                   "If the user type a French text, you translate it into English.\n" +
+                   "If the user type an English text, you translate it into French.\n" +
+                   "If the text contains only one to three words, give some examples of usage of these words in English.\n";
             this.listeRolesSysteme.add(new SelectItem(role, "Traducteur Anglais-Français"));
 
-            role = """
-                    Your are a travel guide. If the user type the name of a country or of a town,
-                    you tell them what are the main places to visit in the country or the town
-                    are you tell them the average price of a meal.
-                    """;
+            role = "Your are a travel guide. If the user type the name of a country or of a town,\n" +
+                   "you tell them what are the main places to visit in the country or the town\n" +
+                   "are you tell them the average price of a meal.\n";
             this.listeRolesSysteme.add(new SelectItem(role, "Guide touristique"));
         }
 
